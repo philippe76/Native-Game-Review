@@ -6,15 +6,33 @@ import ReviewDetail from '../screens/reviewDetail';
 
 const screens = {
     Home: {
-        screen: Home
+        screen: Home,
+        navigationOptions: {
+            title: 'Game Zone'
+        }
     },
     ReviewDetail: {
-        screen: ReviewDetail
+        screen: ReviewDetail,
+        navigationOptions: {
+            title: 'Review Details'            
+        }
     }
 }
 
 
-const HomeStack = createStackNavigator(screens);
+const HomeStack = createStackNavigator(screens, {
+    defaultNavigationOptions: {
+        headerStyle: {
+            backgroundColor: '#00ffff',
+            height: 120
+        },
+        headerTitleStyle: {
+            color: 'white',
+            textAlign: 'center',
+            fontSize: 25
+        }
+    }
+});
 
 export default createAppContainer(HomeStack);
 
