@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import * as Font from 'expo-font';
-import Home from './screens/home';
 import AppLoading from 'expo-app-loading';
+import Navigator from './routes/homeStack';
 
+// wait for fonts to be loaded
 const getFonts = () => Font.loadAsync({
   'nunito-regular': require('./assets/fonts/Nunito-Regular.ttf'),
   'nunito-bold': require('./assets/fonts/Nunito-Bold.ttf'),
-  'shadow': require('./assets/fonts/ShadowsIntoLight-Regular.ttf')
+  'caveat-bold': require('./assets/fonts/Caveat-Bold.ttf')
 })
 
 export default function App() {
@@ -15,7 +16,7 @@ export default function App() {
   
   if (fontsLoaded) {
     return (
-      <Home />
+      <Navigator />
     );
   }
   else {
