@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import * as Font from 'expo-font';
 import AppLoading from 'expo-app-loading';
-import Navigator from './routes/homeStack';
+import Navigator from './routes/drawer';
 
 // wait for fonts to be loaded
 const getFonts = () => Font.loadAsync({
