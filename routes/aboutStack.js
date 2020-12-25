@@ -6,7 +6,7 @@ const screens = {
     About: {
         screen: About,
         navigationOptions: {
-            title: 'Game Zone'
+            title: 'About Game Zone'
         }
     }
 }
