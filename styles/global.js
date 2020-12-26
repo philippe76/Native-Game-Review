@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-const globalStyle = StyleSheet.create({
+export const globalStyle = StyleSheet.create({
     container: {
         flex: 1,
         padding: 40        
@@ -14,6 +14,15 @@ const globalStyle = StyleSheet.create({
         marginVertical: 8,
         lineHeight: 20
     }
-})
+});
 
-export default globalStyle;
+export const images = {
+    rating: {
+        1: require('../assets/rating-1.png'),
+        2: require('../assets/rating-2.png'),
+        3: require('../assets/rating-3.png'),
+        4: require('../assets/rating-4.png'),
+        5: require('../assets/rating-5.png'),
+    }
+} 
+
