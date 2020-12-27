@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, FlatList, TouchableOpacity, Modal, StyleSheet } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity, Modal, StyleSheet, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import { globalStyle } from '../styles/global';
 import Card from './card';
 import ReviewForm from './reviewForm';
@@ -13,15 +13,22 @@ const Home = ({ navigation }) => {
         { title: 'Zelda, Breath of Fresh Air', rating: 5, body: 'lorem ipsum', key: '1' },
         { title: 'Gotta Catch Them All (again)', rating: 2, body: 'lorem ipsum', key: '2' },
         { title: 'Not So "Final" Fantasy', rating: 3, body: 'lorem ipsum', key: '3' },
-      ]);
+    ]);
+
+    const addReview = (review) => {
+        setReviews(prevState => [review, ...prevState]);
+        setModalOpen(false)
+    }
 
     return (
         <View style={globalStyle.container}>
             <Modal visible={modalOPen} animationType='slide'>
-                <View style={styles.modalContent}>
-                    <MaterialIcons name='close' size={30} style={{...styles.modalToggle, ...styles.modalClose}} onPress={() => setModalOpen(false)} />
-                    <ReviewForm />
-                </View>
+                <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+                    <View style={styles.modalContent}>
+                        <MaterialIcons name='close' size={30} style={{...styles.modalToggle, ...styles.modalClose}} onPress={() => setModalOpen(false)} />
+                        <ReviewForm addReview={addReview}/>
+                    </View>
+                </TouchableWithoutFeedback>
             </Modal>
             
             <FlatList 
