@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity, Modal, StyleSheet } from 'react-native';
 import { globalStyle } from '../styles/global';
 import Card from './card';
+import ReviewForm from './reviewForm';
 import { MaterialIcons } from '@expo/vector-icons';
 
 const Home = ({ navigation }) => {
@@ -17,9 +18,9 @@ const Home = ({ navigation }) => {
     return (
         <View style={globalStyle.container}>
             <Modal visible={modalOPen} animationType='slide'>
-                <View>
+                <View style={styles.modalContent}>
                     <MaterialIcons name='close' size={30} style={{...styles.modalToggle, ...styles.modalClose}} onPress={() => setModalOpen(false)} />
-                    <Text>WELCOME TO THE MODAL</Text>
+                    <ReviewForm />
                 </View>
             </Modal>
             
@@ -53,6 +54,9 @@ const styles = StyleSheet.create({
         shadowColor: '#333',
         shadowOpacity: 0.3,
         shadowRadius: 2,
+    },
+    modalContent: {
+        flex: 1
     },
     modalClose: {
         marginVertical: 50,
