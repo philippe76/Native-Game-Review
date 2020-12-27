@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, TextInput, Button } from 'react-native';
+import { View, TextInput, Button, Text } from 'react-native';
 import { globalStyle } from '../styles/global';
 import { Formik } from 'formik';
 import * as yup from 'yup';
@@ -35,23 +35,29 @@ const ReviewForm = ({ addReview }) => {
                             style={globalStyle.input}
                             placeholder='Review title'
                             onChangeText={formikprops.handleChange('title')}
+                            onBlur={formikprops.handleBlur('title')}
                             value={formikprops.values.title}
                         />
+                        <Text style={globalStyle.errorText}>{ formikprops.touched.title && formikprops.errors.title }</Text>
                         <TextInput 
                             style={globalStyle.input}
                             multiline
                             placeholder='Review body'
                             onChangeText={formikprops.handleChange('body')}
+                            onBlur={formikprops.handleBlur('body')}
                             value={formikprops.values.body}
                         />
+                        <Text style={globalStyle.errorText}>{ formikprops.touched.body && formikprops.errors.body }</Text>
                         <TextInput 
                             style={globalStyle.input}
                             keyboardType= 'numeric'
                             placeholder='Rating (1-5)'
                             onChangeText={formikprops.handleChange('rating')}
+                            onBlur={formikprops.handleBlur('rating')}
                             value={formikprops.values.rating}
                         />
-                        <Button title='submit' color='maroon' onPress={formikprops.handleSubmit} />
+                        <Text style={globalStyle.errorText}>{ formikprops.touched.rating && formikprops.errors.rating }</Text>
+                        <Button title='submit' color='indianred' onPress={formikprops.handleSubmit} />
                     </View>
                 )}
             </Formik>
