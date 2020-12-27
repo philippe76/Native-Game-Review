@@ -16,6 +16,7 @@ const Home = ({ navigation }) => {
     ]);
 
     const addReview = (review) => {
+        review.key = Math.random().toString();
         setReviews(prevState => [review, ...prevState]);
         setModalOpen(false)
     }
