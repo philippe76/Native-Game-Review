@@ -11,7 +11,7 @@ const screens = {
         navigationOptions: ({ navigation }) => {
             return {
                 headerTitle: () => <Header navigation={navigation} title='About GameZone'/>,
-                headerBackground: () => <Image source = {require ('../assets/game_bg.png')} style = {{height: '100%', opacity: 0.8, backgroundColor: '#00ffff'}} />
+                headerBackground: () => <Image source = {require ('../assets/game_bg.png')} style = {{height: '100%'}} />
             }
         } 
     }
@@ -21,7 +21,6 @@ const screens = {
 const AboutStack = createStackNavigator(screens, {
     defaultNavigationOptions: {
         headerStyle: {
-            backgroundColor: '#00ffff',
             height: 120
         },
         headerTitleStyle: {

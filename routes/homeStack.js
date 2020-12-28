@@ -12,7 +12,7 @@ const screens = {
         navigationOptions: ({ navigation }) => {
             return {
                 headerTitle: () => <Header navigation={navigation} title='GameZone'/>,
-                headerBackground: () => <Image source = {require ('../assets/game_bg.png')} style = {{height: '100%', opacity: 0.8, backgroundColor: '#00ffff'}} />
+                headerBackground: () => <Image source = {require ('../assets/game_bg.png')} style = {{height: '100%'}} />
             }
         } 
     },
